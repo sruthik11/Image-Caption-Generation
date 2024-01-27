@@ -38,14 +38,10 @@ Required libraries for Python along with their version numbers used while making
 	<li>tqdm - 4.28.1</li>
 </ul>
 
-<strong>Flickr8k Dataset:</strong> <a href="https://forms.illinois.edu/sec/1713398">Dataset Request Form</a>
-
-<strong>UPDATE (April/2019):</strong> The official site seems to have been taken down (although the form still works). Here are some direct download links:
 
 <ul type="square">
 	<li><a href="https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_Dataset.zip">Flickr8k_Dataset</a></li>
 	<li><a href="https://github.com/jbrownlee/Datasets/releases/download/Flickr8k/Flickr8k_text.zip">Flickr8k_text</a></li>
-	Download Link Credits:<a href="https://machinelearningmastery.com/develop-a-deep-learning-caption-generation-model-in-python/"> Jason Brownlee</a>
 </ul>
 
 <strong>Important:</strong> After downloading the dataset, put the reqired files in train_val_data folder
@@ -59,12 +55,6 @@ Required libraries for Python along with their version numbers used while making
 - **If you're low on memory**, use google colab or reduce batch size
 - In case of BEAM Search, `loss` and `val_loss` are same as in case of argmax since the model is same
 
-| Model & Config | Argmax | BEAM Search |
-| :--- | :--- | :--- |
-| **InceptionV3 + AlternativeRNN** <ul><li>Epochs = 20</li><li>Batch Size = 64</li><li>Optimizer = Adam</li></ul> |<ul>**Crossentropy loss**<br>*(Lower the better)*<li>loss(train_loss): 2.4050</li><li>val_loss: 3.0527</li>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.596818</li><li>BLEU-2: 0.356009</li><li>BLEU-3: 0.252489</li><li>BLEU-4: 0.129536</li></ul> |<ul>**k = 3**<br><br>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.606086</li><li>BLEU-2: 0.359171</li><li>BLEU-3: 0.249124</li><li>BLEU-4: 0.126599</li></ul> |
-| **InceptionV3 + RNN** <ul><li>Epochs = 11</li><li>Batch Size = 64</li><li>Optimizer = Adam</li></ul> |<ul>**Crossentropy loss**<br>*(Lower the better)*<li>loss(train_loss): 2.5254</li><li>val_loss: 3.1769</li>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.601791</li><li>BLEU-2: 0.344289</li><li>BLEU-3: 0.230025</li><li>BLEU-4: 0.108898</li></ul> |<ul>**k = 3**<br><br>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.605097</li><li>BLEU-2: 0.356094</li><li>BLEU-3: 0.251132</li><li>BLEU-4: 0.129900</li></ul> |
-| **VGG16 + AlternativeRNN** <ul><li>Epochs = 18</li><li>Batch Size = 64</li><li>Optimizer = Adam</li></ul> |<ul>**Crossentropy loss**<br>*(Lower the better)*<li>loss(train_loss): 2.2880</li><li>val_loss: 3.1889</li>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.596655</li><li>BLEU-2: 0.342127</li><li>BLEU-3: 0.229676</li><li>BLEU-4: 0.108707</li></ul> | <ul>**k = 3**<br><br>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.593876</li><li>BLEU-2: 0.348569</li><li>BLEU-3: 0.242063</li><li>BLEU-4: 0.123221</li></ul> |
-| **VGG16 + RNN** <ul><li>Epochs = 7</li><li>Batch Size = 64</li><li>Optimizer = Adam</li></ul> |<ul>**Crossentropy loss**<br>*(Lower the better)*<li>loss(train_loss): 2.6297</li><li>val_loss: 3.3486</li>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.557626</li><li>BLEU-2: 0.317652</li><li>BLEU-3: 0.216636</li><li>BLEU-4: 0.105288</li></ul> |<ul>**k = 3**<br><br>**BLEU Scores on Validation data**<br>*(Higher the better)*<li>BLEU-1: 0.568993</li><li>BLEU-2: 0.326569</li><li>BLEU-3: 0.226629</li><li>BLEU-4: 0.113102</li></ul> |
 
 
 ## 3. Generated Captions on Test Images
