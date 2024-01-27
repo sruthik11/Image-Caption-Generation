@@ -1,6 +1,6 @@
 ## Image Caption Generator
 
-A neural network to generate captions for an image using CNN and RNN with BEAM Search.
+A neural network to generate captions for an image using CNN and RNN with BEAM Search and then using ViT + GPT2
 
 
 ## Table of Contents
@@ -56,20 +56,18 @@ Required libraries for Python along with their version numbers used while making
 - In case of BEAM Search, `loss` and `val_loss` are same as in case of argmax since the model is same
 
 
+<img width="607" alt="Screenshot 2023-12-07 at 8 57 19 AM" src="https://github.com/sruthik11/Image-Caption-Generation/assets/39257137/95b66880-6dc2-45e0-a53e-a22c8b263ce2">
+<img width="603" alt="Screenshot 2023-12-07 at 9 12 03 AM" src="https://github.com/sruthik11/Image-Caption-Generation/assets/39257137/eee782c7-731a-4547-a98e-5cacc741d5e3">
+
 
 ## 3. Generated Captions on Test Images
+<img width="548" alt="Screenshot 2023-12-07 at 9 26 28 AM" src="https://github.com/sruthik11/Image-Caption-Generation/assets/39257137/057292e9-e629-4c9d-aedf-f7ab91b271fa">
 
-**Model used** - *InceptionV3 + AlternativeRNN*
-
-| Image | Caption |
-| :---: | :--- |
-| <img width="50%" src="https://github.com/dabasajay/Image-Caption-Generator/raw/master/test_data/bikestunt.jpg" alt="Image 1"> | <ul><li><strong>Argmax:</strong> A man in a blue shirt is riding a bike on a dirt path.</li><li><strong>BEAM Search, k=3:</strong> A man is riding a bicycle on a dirt path.</li></ul>|
-| <img src="https://github.com/dabasajay/Image-Caption-Generator/raw/master/test_data/surfing.jpeg" alt="Image 2"> | <ul><li><strong>Argmax:</strong> A man in a red kayak is riding down a waterfall.</li><li><strong>BEAM Search, k=3:</strong> A man on a surfboard is riding a wave.</li></ul>|
 
 ## 4. Procedure to Train Model
 
 1. Clone the repository to preserve directory structure.<br>
-`git clone https://github.com/dabasajay/Image-Caption-Generator.git`
+`git clone https://github.com/sruthik11/Image-Caption-Generator.git`
 2. Put the required dataset files in `train_val_data` folder (files mentioned in readme there).
 3. Review `config.py` for paths and other configurations (explained below).
 4. Run `train_val.py`.
@@ -77,7 +75,7 @@ Required libraries for Python along with their version numbers used while making
 ## 5. Procedure to Test on new images
 
 1. Clone the repository to preserve directory structure.<br>
-`git clone https://github.com/dabasajay/Image-Caption-Generator.git`
+`git clone https://github.com/sruthik11/Image-Caption-Generator.git`
 2. Train the model to generate required files in `model_data` folder (steps given above).
 3. Put the test images in `test_data` folder.
 4. Review `config.py` for paths and other configurations (explained below).
@@ -118,21 +116,6 @@ Required libraries for Python along with their version numbers used while making
 - **Results aren't very great using beam search compared to argmax**:
   - Try higher `k` in BEAM search using `beam_search_k` parameter in config. Note that higher `k` will improve results but it'll also increase inference time significantly.
 
-## 8. TODO
-
-- [X] Support for VGG16 Model. Uses InceptionV3 Model by default.
-
-- [X] Implement 2 architectures of RNN Model.
-
-- [X] Support for batch processing in data generator with shuffling.
-
-- [X] Implement BEAM Search.
-
-- [X] Calculate BLEU Scores using BEAM Search.
-
-- [ ] Implement Attention and change model architecture.
-
-- [ ] Support for pre-trained word vectors like word2vec, GloVe etc.
 
 ## 9. References
 
